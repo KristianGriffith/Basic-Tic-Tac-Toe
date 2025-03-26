@@ -12,11 +12,11 @@ char board[3][3] = {{' ', ' ' , ' '}, { ' ', ' ', ' '},{' ', ' ', ' '}};
 void clearScreen()
 {
     // Windows-specific (works for both 32-bit and 64-bit)
-	#if defined(_WIN32) || defined(_WIN64)
+    #if defined(_WIN32) || defined(_WIN64)
     system("cls");
 
     // If the OS is not Windows
-	#else
+    #else
     system("clear");
 	#endif
 }
@@ -154,8 +154,8 @@ int main()
                 {
                     cin.clear(); // Clear input buffer
                     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
-                    cout << "Invalid input! Please enter a row number between 1 and 3: ";
                     clearScreen();
+		    cout << "Invalid input! Please enter a row number between 1 and 3: ";
                     displayBoard();
                     cout<<"\n   Enter row and column:  ";
                 }
@@ -227,7 +227,7 @@ int main()
         transform(playAgain.begin(), playAgain.end(), playAgain.begin(), ::tolower);
     }
 
-    cout << "Thanks for playing!\n";
+    cout << "  Thanks for playing!\n";
     return 0;
 }
 
